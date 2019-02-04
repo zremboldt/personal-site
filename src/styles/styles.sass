@@ -1,0 +1,481 @@
+
+// --------------
+// Global styles
+// --------------
+
+*, *:after, *:before
+  box-sizing: border-box
+
+// Color Variables
+$l1: hsla(223, 13%, 97%, 1)
+$l2: hsla(200, 20%, 91%, 1)
+$border: hsla(200, 20%, 80%, 1)
+$text: hsla(205, 9%, 24%, 1)
+
+// Mixins
+=size($x, $y)
+  width: $x
+  height: $y
+
+// Text
+h1, h3, p, a, ul, li
+  margin: 0
+  padding: 0
+  color: $text
+  font-family: "Roboto", sans-serif
+  list-style: none
+
+h1
+  font-size: 2.369rem
+  font-weight: 300
+
+h3
+  font-size: 1.333rem
+  font-weight: 700
+  margin-bottom: 0.6rem
+
+p
+  font-size: 1rem
+  font-weight: 400
+  line-height: 1.45
+
+a
+  cursor: pointer
+  outline: none
+  text-decoration: none
+
+svg
+  +size(24px, 24px)
+  fill: $text
+
+hr
+  display: block
+  width: 20%
+  height: 3px
+  border: 0
+  border-top: 3px solid $border
+  margin: 0 auto 100px
+  padding: 0
+
+.btn
+  cursor: pointer
+  transition: all 0.2s ease-in-out
+
+  &:hover
+    background-color: $border
+
+@keyframes fadeInLeft
+  0%
+    opacity: 0
+    transform: translateX(30px)
+  100%
+    opacity: 1
+    transform: translateX(0px)
+
+.fadeInLeft
+  animation:
+    name: fadeInLeft
+    duration: 1000ms
+    fill-mode: forwards
+    timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+
+@keyframes splashLogoReveal
+  0%
+    transform: skewX(-25deg) translateX(0px)
+  20%
+    transform: skewX(-25deg) translateX(300px)
+  80%
+    transform: skewX(-25deg) translateX(300px)
+  100%
+    transform: skewX(-25deg) translateX(-26px)
+
+
+
+// --------------
+//  Background
+// --------------
+
+body
+  position: relative
+  margin: 0
+  padding: 0
+  width: 100%
+  height: 100%
+  background-color: $l1
+
+.wrapper
+  max-width: 650px
+  min-height: 100vh
+  display: grid
+  grid-template-columns: 2fr 380px
+  grid-template-rows: 350px auto auto 1fr
+  grid-template-areas: "logo  logo" "aboutMain  work" "about  work" "about contact"
+  position: relative
+  z-index: 3
+  margin: 0 auto
+  padding: 0 30px
+
+.background
+  display: none
+  position: absolute
+  right: 0
+  top: 0
+  z-index: 2
+  width: 30%
+  width: calc(50% - 230px)
+  min-height: 100%
+  background-color: $l2
+
+
+
+// --------------
+//  SplashScreen
+// --------------
+
+.splashscreen
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 99
+  opacity: 0
+  display: none
+  justify-content: center
+  align-items: center
+  transition: opacity 0.5s ease-out
+  background-color: $l1
+
+  .mask
+    +size(300px, 100px)
+    position: absolute
+    background-color: $l1
+    transform: skewX(-25deg) translateX(-26px)
+
+    @for $i from 1 through 3
+      &:nth-child(#{$i})
+        opacity: 1 / $i
+        animation:
+          name: splashLogoReveal
+          duration: 2400ms
+          delay: 400 + (180ms * $i)
+          timing-function: ease-in-out
+          fill-mode: forwards
+
+  .splashLogo
+    +size(254px, 94px)
+
+.ssDisplay
+  display: flex
+
+.ssActive
+  opacity: 1
+
+// applied to body
+.scrollLock
+  overflow: hidden
+
+
+// --------------
+//  Left
+// --------------
+
+.containerLogo
+  grid-area: logo
+
+  .logo
+    +size(254px, 94px)
+    padding: 50px 0 206px
+    box-sizing: content-box
+    background-color: $l1
+    display: block
+
+
+
+// ================================
+
+.containerAboutMain
+  grid-area: aboutMain
+  margin-bottom: 60px
+
+.containerAbout
+  grid-area: about
+
+  section:nth-of-type(n+2)
+    margin-bottom: 100px
+
+    h3
+      margin-bottom: 0.9rem
+
+  section
+    margin-bottom: 60px
+
+    &:first-of-type p
+      &:first-of-type
+        margin-bottom: 18px
+
+  li
+    padding: 20px 0
+    border-top: 1px solid $border
+    cursor: pointer
+
+    &:last-of-type
+      border-bottom: 1px solid $border
+
+    &:hover
+      p
+        transform: translateX(0px)
+      svg
+        transform: translateX(0px)
+
+  .strengthLabel
+    display: flex
+    justify-content: space-between
+
+    p
+      transform: translateX(10px)
+      transition: transform 0.2s ease-in-out
+    svg
+      transform: translateX(-10px)
+      transition: transform 0.2s ease-in-out
+
+    .svgActive
+      transform: rotateX(180deg)
+
+  .sub
+    padding: 10px 30px 0
+    display: none
+    opacity: 0
+    transition: 0.3s ease-in-out
+
+  .subDisplay
+    display: block
+
+  .subActive
+    opacity: 1
+
+
+
+// --------------
+//  Right
+// --------------
+
+.card
+  display: block
+  position: relative
+  z-index: 3
+  width: 100%
+  margin-bottom: 20px
+  background-color: $l1
+  border-radius: 5px
+  box-shadow: 0 2px 1px $border
+  transition: all 0.3s
+  // js handles opacity - fallback in <noscript> tag
+  opacity: 0
+
+  &:after
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: $l1
+    border-radius: 5px
+    box-shadow: 0 10px 20px -2px $border
+    transition: opacity 0.3s ease-in-out
+
+  &:hover:after
+    opacity: 0
+
+
+
+// ================================
+
+.containerWork
+  grid-area: work
+
+  .cardWork
+    padding: 30px 28% 30px 30px
+
+    &:nth-child(2)
+      margin-bottom: 100px
+
+  .tab
+    position: absolute
+    top: 16px
+    right: -5px
+    +size(60px, 44px)
+    border-radius: 5px 0 0 5px
+    background-color: $text
+
+  svg
+    margin: 10px
+    fill: white
+
+
+
+// ================================
+
+.containerContact
+  grid-area: contact
+  padding-bottom: 30px
+
+  .containerText
+    padding: 30px
+
+  .email
+    position: relative
+    display: flex
+    flex-direction: column
+    padding: 20px 30px
+    border-top: 1px solid $border
+    border-bottom: 1px solid $border
+    overflow: hidden
+
+  .txt-address
+    display: flex
+    transition: all 0.3s
+
+    p
+      margin-left: 12px
+      font-weight: 700
+
+  .address-active
+    transform: translateY(-45px)
+    opacity: 0
+
+  .txt-copied
+    position: absolute
+    bottom: -48px
+    transition: all 0.3s
+    opacity: 0
+
+    p
+      line-height: 1.34
+
+  .copied-active
+    transform: translateY(-60px)
+    opacity: 1 !important
+
+  .social
+    display: flex
+    justify-content: space-around
+    overflow: hidden
+    border-radius: 0 0 5px 5px
+
+    a
+      flex: 1
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 66px
+
+
+
+// --------------
+//  Feature Queries
+// --------------
+
+@supports (display:grid)
+  hr
+    display: none
+
+  @media (max-width: 850px)
+    hr
+      display: block
+
+  .background
+    display: block
+
+  .wrapper
+    max-width: 1200px
+
+  .containerAboutMain
+    margin-right: 80px
+
+  .containerAbout
+    margin-right: 80px
+
+
+
+// --------------
+//  Media Queries
+// --------------
+
+@media (max-width: 1200px)
+  .background
+    width: 30%
+
+
+
+// ================================
+
+@media (max-width: 1020px)
+  .background
+    width: 36%
+
+
+
+// ================================
+
+@media (max-width: 850px)
+
+  .background
+    display: none
+
+  .wrapper
+    max-width: 500px
+    grid-template-columns: auto
+    grid-template-rows: auto
+    grid-template-areas: "logo" "aboutMain" "work" "about" "contact"
+
+  .containerLogo
+
+    .logo
+      padding: 30px 0 100px
+      margin: 0 auto
+      border: 6px solid $l1
+
+  .containerAboutMain
+    margin: 0 0 80px
+
+    h1
+      text-align: center
+
+  .card
+    box-shadow: 0 2px 10px $border
+
+  .containerAbout
+    margin: 0
+
+  .containerContact
+    margin-bottom: 60px
+
+
+
+// ================================
+
+@media (max-width: 500px)
+
+  .wrapper
+    padding: 0 10px
+    grid-template-areas: "logo" "aboutMain" "work" "contact"
+
+  .containerLogo
+    .logo
+      padding-bottom: 80px
+
+  .containerAboutMain
+    margin: 0 0 60px
+    padding: 20px
+
+    h1
+      font-size: 1.9rem
+
+  .containerAbout
+    display: none
+
+  .containerContact
+    margin-bottom: 30px
