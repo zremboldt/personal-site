@@ -19,22 +19,22 @@ h1, h3, p, a, ul, li
   margin: 0
   padding: 0
   color: $text
-  font-family: "Roboto", sans-serif
+  font-family: 'Nunito', sans-serif
   list-style: none
 
-h1
-  font-size: 2.369rem
-  font-weight: 300
+// h1
+//   font-size: 2.369rem
+//   font-weight: 300
 
-h3
-  font-size: 1.333rem
-  font-weight: 700
-  margin-bottom: 0.6rem
+// h3
+//   font-size: 1.333rem
+//   font-weight: 700
+//   margin-bottom: 0.6rem
 
-p
-  font-size: 1rem
-  font-weight: 400
-  line-height: 1.45
+// p
+//   font-size: 1rem
+//   font-weight: 400
+//   line-height: 1.45
 
 a
   cursor: pointer
@@ -94,34 +94,37 @@ hr
 
 body
   position: relative
-  margin: 0
-  padding: 0
-  width: 100%
-  height: 100%
+  // margin: 0
+  // padding: 0
+  // width: 100%
+  // height: 100%
   background-color: $l1
 
 .wrapper
-  max-width: 650px
-  min-height: 100vh
-  display: grid
-  grid-template-columns: 2fr 380px
-  grid-template-rows: 350px auto auto 1fr
-  grid-template-areas: "logo  logo" "aboutMain  work" "about  work" "about contact"
-  position: relative
-  z-index: 3
+  max-width: 1200px
+  // min-height: 100vh
+  // display: grid
+  // grid-template-columns: 2fr 380px
+  // grid-template-rows: 350px auto auto 1fr
+  // grid-template-areas: "logo  logo" "aboutMain  work" "about  work" "about contact"
+  // position: relative
+  // z-index: 3
   margin: 0 auto
   padding: 0 30px
 
-.background
-  display: none
-  position: absolute
-  right: 0
-  top: 0
-  z-index: 2
-  width: 30%
-  width: calc(50% - 230px)
-  min-height: 100%
-  background-color: $l2
+main
+  display: flex
+
+// .background
+//   display: none
+//   position: absolute
+//   right: 0
+//   top: 0
+//   z-index: 2
+//   width: 30%
+//   width: calc(50% - 230px)
+//   min-height: 100%
+//   background-color: $l2
 
 
 
@@ -192,25 +195,14 @@ body
 
 // ================================
 
-.containerAboutMain
-  grid-area: aboutMain
-  margin-bottom: 60px
 
-.containerAbout
-  grid-area: about
 
-  section:nth-of-type(n+2)
-    margin-bottom: 100px
-
-    h3
-      margin-bottom: 0.9rem
+.ctr-about
+  margin-right: 80px
+  flex: 2
 
   section
     margin-bottom: 60px
-
-    &:first-of-type p
-      &:first-of-type
-        margin-bottom: 18px
 
   li
     padding: 20px 0
@@ -246,17 +238,21 @@ body
     opacity: 0
     transition: 0.3s ease-in-out
 
-  .subDisplay
-    display: block
+  // .subDisplay
+  //   display: block
 
-  .subActive
-    opacity: 1
+  // .subActive
+  //   opacity: 1
 
 
 
 // --------------
 //  Right
 // --------------
+
+.ctr-right
+  flex: 1
+  min-width: 380px
 
 .card
   display: block
@@ -269,7 +265,7 @@ body
   box-shadow: 0 2px 1px $border
   transition: all 0.3s
   // js handles opacity - fallback in <noscript> tag
-  opacity: 0
+  // opacity: 0
 
   &:after
     content: ''
@@ -292,7 +288,6 @@ body
 // ================================
 
 .containerWork
-  grid-area: work
 
   .cardWork
     padding: 30px 28% 30px 30px
@@ -317,7 +312,6 @@ body
 // ================================
 
 .containerContact
-  grid-area: contact
   padding-bottom: 30px
 
   .containerText
@@ -372,30 +366,6 @@ body
 
 
 
-// --------------
-//  Feature Queries
-// --------------
-
-@supports (display:grid)
-  hr
-    display: none
-
-  @media (max-width: 850px)
-    hr
-      display: block
-
-  .background
-    display: block
-
-  .wrapper
-    max-width: 1200px
-
-  .containerAboutMain
-    margin-right: 80px
-
-  .containerAbout
-    margin-right: 80px
-
 
 
 // --------------
@@ -425,9 +395,6 @@ body
 
   .wrapper
     max-width: 500px
-    grid-template-columns: auto
-    grid-template-rows: auto
-    grid-template-areas: "logo" "aboutMain" "work" "about" "contact"
 
   .containerLogo
 
@@ -459,7 +426,6 @@ body
 
   .wrapper
     padding: 0 10px
-    grid-template-areas: "logo" "aboutMain" "work" "contact"
 
   .containerLogo
     .logo
@@ -472,7 +438,7 @@ body
     h1
       font-size: 1.9rem
 
-  .containerAbout
+  .aboutStory, .aboutStrengths
     display: none
 
   .containerContact

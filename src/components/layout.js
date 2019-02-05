@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-
-import Header from "./header";
-import "../styles/baseStyles.css";
-import "../styles/styles.sass";
+import Image from "../components/image";
+// import Header from "./header";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -21,7 +19,11 @@ const Layout = ({ children }) => (
       <>
         <div className="background" />
         <div className="wrapper">
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <header className="containerLogo">
+            <div className="logo">
+              <Image />
+            </div>
+          </header>
           <main>{children}</main>
           {/* <footer>
             © {new Date().getFullYear()}, Built with
