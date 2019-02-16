@@ -111,7 +111,7 @@ const IndexPage = () => (
 
     <div className="ctr-right">
       <div className="ctr-Work">
-        <a href="https://dribbble.com/RemboldtDesign" className="card cardWork">
+        <a href="https://github.com/zacaree" className="card cardWork">
           <h3>GitHub</h3>
           <p>Most of my more involved projects and ideas can be found here.</p>
           <div className="tab">
