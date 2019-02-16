@@ -20,7 +20,9 @@ const Layout = ({ children }) => (
       <>
         <div className="background" />
         <div className="wrapper">
-          <Logo />
+          <header>
+            <Logo />
+          </header>
           <main>{children}</main>
           {/* <footer>
             © {new Date().getFullYear()}, Built with
