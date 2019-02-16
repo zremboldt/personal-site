@@ -18,6 +18,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <div className="accentBar" />
         <div className="background" />
         <div className="wrapper">
           <header>
