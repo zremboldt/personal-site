@@ -110,7 +110,7 @@ const IndexPage = () => (
     </div>
 
     <div className="ctr-right">
-      <div className="containerWork">
+      <div className="ctr-Work">
         <a href="https://dribbble.com/RemboldtDesign" className="card cardWork">
           <h3>GitHub</h3>
           <p>Most of my more involved projects and ideas can be found here.</p>
@@ -129,9 +129,9 @@ const IndexPage = () => (
         {/* <hr /> */}
       </div>
 
-      <div className="containerContact">
+      <div className="ctr-Contact">
         <div className="card cardContact">
-          <div className="containerText">
+          <div className="ctr-Text">
             <h3>Say Hi :)</h3>
             <p>
               I'm available for remote projects. If you’d like to build something together, get in
