@@ -46,6 +46,9 @@ a
   outline: none
   text-decoration: none
 
+ul, li
+  margin: 0
+
 svg
   +size(24px, 24px)
   fill: $text
@@ -108,14 +111,10 @@ body
 .wrapper
   max-width: 1200px
   // min-height: 100vh
-  // display: grid
-  // grid-template-columns: 2fr 380px
-  // grid-template-rows: 350px auto auto 1fr
-  // grid-template-areas: "logo  logo" "aboutMain  work" "about  work" "about contact"
   // position: relative
   // z-index: 3
   margin: 0 auto
-  padding: 0 30px
+  padding: 50px 30px 0
 
 main
   display: flex
@@ -188,7 +187,7 @@ main
 .logo
   display: block
   +size(254px, 94px)
-  margin: 50px 0 206px
+  margin-bottom: 206px
   background-color: $l1
   // background-color: $text
   fill: $text
@@ -225,6 +224,7 @@ main
     justify-content: space-between
 
     p
+      margin: 0
       transform: translateX(10px)
       transition: transform 0.2s ease-in-out
     svg
@@ -285,17 +285,18 @@ main
   &:hover:after
     opacity: 0
 
+  p
+    margin: 0
+
 
 
 // ================================
 
-.containerWork
+.ctr-Work
+  margin-bottom: 100px
 
   .cardWork
     padding: 30px 28% 30px 30px
-
-    &:nth-child(2)
-      margin-bottom: 100px
 
   .tab
     position: absolute
@@ -313,10 +314,10 @@ main
 
 // ================================
 
-.containerContact
+.ctr-Contact
   padding-bottom: 30px
 
-  .containerText
+  .ctr-Text
     padding: 30px
 
   .email
@@ -333,7 +334,7 @@ main
     transition: all 0.3s
 
     p
-      margin-left: 12px
+      margin: 0 0 0 12px
       font-weight: 700
 
   .address-active
@@ -398,14 +399,12 @@ main
   .wrapper
     max-width: 500px
 
-  .containerLogo
+  .logo
+    padding: 30px 0 100px
+    margin: 0 auto
+    border: 6px solid $l1
 
-    .logo
-      padding: 30px 0 100px
-      margin: 0 auto
-      border: 6px solid $l1
-
-  .containerAboutMain
+  .aboutStatement
     margin: 0 0 80px
 
     h1
@@ -414,10 +413,10 @@ main
   .card
     box-shadow: 0 2px 10px $border
 
-  .containerAbout
+  .ctr-About
     margin: 0
 
-  .containerContact
+  .ctr-Contact
     margin-bottom: 60px
 
 
@@ -429,11 +428,10 @@ main
   .wrapper
     padding: 0 10px
 
-  .containerLogo
-    .logo
-      padding-bottom: 80px
+  .logo
+    padding-bottom: 80px
 
-  .containerAboutMain
+  .aboutStatement
     margin: 0 0 60px
     padding: 20px
 
@@ -443,5 +441,5 @@ main
   .aboutStory, .aboutStrengths
     display: none
 
-  .containerContact
+  .ctr-Contact
     margin-bottom: 30px
