@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-import Image from "../components/image";
+// import Image from "../components/image";
+import Logo from "../images/Logo";
 // import Header from "./header";
 
 const Layout = ({ children }) => (
@@ -19,11 +20,7 @@ const Layout = ({ children }) => (
       <>
         <div className="background" />
         <div className="wrapper">
-          <header className="containerLogo">
-            <div className="logo">
-              <Image />
-            </div>
-          </header>
+          <Logo />
           <main>{children}</main>
           {/* <footer>
             © {new Date().getFullYear()}, Built with
