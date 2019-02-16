@@ -18,28 +18,12 @@ $text: hsla(205, 9%, 24%, 1)
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700')
 
 h1, h3, p, a, ul, li
-  // margin: 0
-  // padding: 0
   color: $text
   font-family: 'Nunito', sans-serif
   list-style: none
 
 h1, h2, h3, h4, h5, h6
   font-weight: 700
-
-// h1
-//   font-size: 2.369rem
-//   font-weight: 300
-
-// h3
-//   font-size: 1.333rem
-//   font-weight: 700
-//   margin-bottom: 0.6rem
-
-// p
-//   font-size: 1rem
-//   font-weight: 400
-//   line-height: 1.45
 
 a
   cursor: pointer
@@ -69,120 +53,36 @@ hr
   &:hover
     background-color: $border
 
-@keyframes fadeInLeft
-  0%
-    opacity: 0
-    transform: translateX(30px)
-  100%
-    opacity: 1
-    transform: translateX(0px)
 
-.fadeInLeft
-  animation:
-    name: fadeInLeft
-    duration: 1000ms
-    fill-mode: forwards
-    timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
 
-@keyframes splashLogoReveal
-  0%
-    transform: skewX(-25deg) translateX(0px)
-  20%
-    transform: skewX(-25deg) translateX(300px)
-  80%
-    transform: skewX(-25deg) translateX(300px)
-  100%
-    transform: skewX(-25deg) translateX(-26px)
 
+  
 
 
 // --------------
-//  Background
+//  Layout
 // --------------
 
 body
   position: relative
-  // margin: 0
-  // padding: 0
-  // width: 100%
-  // height: 100%
   background-color: $l1
 
 .wrapper
   max-width: 1200px
-  // min-height: 100vh
-  // position: relative
-  // z-index: 3
   margin: 0 auto
   padding: 50px 30px 0
 
 main
   display: flex
 
-// .background
-//   display: none
-//   position: absolute
-//   right: 0
-//   top: 0
-//   z-index: 2
-//   width: 30%
-//   width: calc(50% - 230px)
-//   min-height: 100%
-//   background-color: $l2
-
-
-
-// --------------
-//  SplashScreen
-// --------------
-
-.splashscreen
-  position: fixed
-  top: 0
+.background
+  position: absolute
   right: 0
-  bottom: 0
-  left: 0
-  z-index: 99
-  opacity: 0
-  display: none
-  justify-content: center
-  align-items: center
-  transition: opacity 0.5s ease-out
-  background-color: $l1
-
-  .mask
-    +size(300px, 100px)
-    position: absolute
-    background-color: $l1
-    transform: skewX(-25deg) translateX(-26px)
-
-    @for $i from 1 through 3
-      &:nth-child(#{$i})
-        opacity: 1 / $i
-        animation:
-          name: splashLogoReveal
-          duration: 2400ms
-          delay: 400 + (180ms * $i)
-          timing-function: ease-in-out
-          fill-mode: forwards
-
-  .splashLogo
-    +size(254px, 94px)
-
-.ssDisplay
-  display: flex
-
-.ssActive
-  opacity: 1
-
-// applied to body
-.scrollLock
-  overflow: hidden
-
-
-// --------------
-//  Left
-// --------------
+  top: 0
+  width: 30%
+  width: calc(50% - 230px)
+  min-height: 100%
+  background-color: $l2
 
 .logo
   display: block
@@ -194,9 +94,13 @@ main
 
 
 
-// ================================
 
 
+
+  
+// --------------
+//  Left
+// --------------
 
 .ctr-about
   margin-right: 80px
@@ -245,6 +149,10 @@ main
 
   // .subActive
   //   opacity: 1
+
+
+
+
 
 
 
@@ -371,6 +279,8 @@ main
 
 
 
+
+
 // --------------
 //  Media Queries
 // --------------
@@ -443,3 +353,91 @@ main
 
   .ctr-Contact
     margin-bottom: 30px
+
+
+
+
+
+
+
+// --------------
+//  Animation
+// --------------
+
+@keyframes fadeInLeft
+  0%
+    opacity: 0
+    transform: translateX(30px)
+  100%
+    opacity: 1
+    transform: translateX(0px)
+
+.fadeInLeft
+  animation:
+    name: fadeInLeft
+    duration: 1000ms
+    fill-mode: forwards
+    timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+
+@keyframes splashLogoReveal
+  0%
+    transform: skewX(-25deg) translateX(0px)
+  20%
+    transform: skewX(-25deg) translateX(300px)
+  80%
+    transform: skewX(-25deg) translateX(300px)
+  100%
+    transform: skewX(-25deg) translateX(-26px)
+
+
+
+
+    
+
+
+// --------------
+//  SplashScreen
+// --------------
+
+.splashscreen
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 99
+  opacity: 0
+  display: none
+  justify-content: center
+  align-items: center
+  transition: opacity 0.5s ease-out
+  background-color: $l1
+
+  .mask
+    +size(300px, 100px)
+    position: absolute
+    background-color: $l1
+    transform: skewX(-25deg) translateX(-26px)
+
+    @for $i from 1 through 3
+      &:nth-child(#{$i})
+        opacity: 1 / $i
+        animation:
+          name: splashLogoReveal
+          duration: 2400ms
+          delay: 400 + (180ms * $i)
+          timing-function: ease-in-out
+          fill-mode: forwards
+
+  .splashLogo
+    +size(254px, 94px)
+
+.ssDisplay
+  display: flex
+
+.ssActive
+  opacity: 1
+
+// applied to body
+.scrollLock
+  overflow: hidden
