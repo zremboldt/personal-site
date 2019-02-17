@@ -21,15 +21,19 @@ $text: hsla(205, 9%, 24%, 1)
   height: $y
 
 // Text
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700')
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,400,700')
+// @import url('https://fonts.googleapis.com/css?family=Farsan|Shrikhand')
 
 h1, h3, p, a, ul, li
   color: $text
   font-family: 'Nunito', sans-serif
   list-style: none
 
-h1, h2, h3, h4, h5, h6
+h2, h3, h4, h5, h6
   font-weight: 700
+  // font-family: 'Shrikhand', cursive
+h1
+  font-weight: 200
 
 a
   cursor: pointer
@@ -194,7 +198,7 @@ main
     background-color: $l1
     border-radius: 5px
     box-shadow: 0 10px 20px -2px $border
-    transition: opacity 0.3s ease-in-out
+    transition: opacity 0.2s ease-in-out
 
   &:hover:after
     opacity: 0
