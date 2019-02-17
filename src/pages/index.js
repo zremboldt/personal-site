@@ -4,6 +4,7 @@ import "../styles/baseStyles.css";
 import "../styles/index.sass";
 
 import Layout from "../components/layout";
+import WorkCard from "../components/WorkCard";
 // import Image from "../components/image";
 import ArrowDown from "../images/ArrowDown";
 import SEO from "../components/seo";
@@ -13,6 +14,19 @@ import LogoInstagram from "../images/LogoInstagram";
 import LogoDribbble from "../images/LogoDribbble";
 import LogoCodepen from "../images/LogoCodepen";
 import LogoLinkedin from "../images/LogoLinkedin";
+
+const work = [
+  {
+    name: "GitHub",
+    text: "Most of my more involved projects and ideas can be found here.",
+    url: "https://github.com/zacaree"
+  },
+  {
+    name: "Codepen",
+    text: "This is the coding laboratory where some of my fun experiments live.",
+    url: "https://codepen.io/Zacaree/"
+  }
+];
 
 const IndexPage = () => (
   <Layout>
@@ -111,21 +125,9 @@ const IndexPage = () => (
 
     <div className="ctr-right">
       <div className="ctr-Work">
-        <a href="https://github.com/zacaree" className="card cardWork">
-          <h3>GitHub</h3>
-          <p>Most of my more involved projects and ideas can be found here.</p>
-          <div className="tab">
-            <LogoGithub />
-          </div>
-        </a>
-
-        <a href="https://codepen.io/Zacaree/" className="card cardWork">
-          <h3>Codepen</h3>
-          <p>This is the coding laboratory where some of my fun experiments live.</p>
-          <div className="tab">
-            <LogoCodepen />
-          </div>
-        </a>
+        {work.map(item => (
+          <WorkCard work={item} />
+        ))}
         {/* <hr /> */}
       </div>
 
