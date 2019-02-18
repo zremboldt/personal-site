@@ -15,6 +15,7 @@ import LogoInstagram from "../images/LogoInstagram";
 import LogoDribbble from "../images/LogoDribbble";
 import LogoCodepen from "../images/LogoCodepen";
 import LogoLinkedin from "../images/LogoLinkedin";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const IndexPage = () => (
   <Layout>

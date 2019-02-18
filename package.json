@@ -16,7 +16,8 @@
     "gatsby-transformer-sharp": "^2.1.13",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
+    "react": "^16.8.2",
+    "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0"
   },
