@@ -3,30 +3,18 @@ import React from "react";
 import "../styles/baseStyles.css";
 import "../styles/index.sass";
 
+import { workData, strengthsData } from "../components/data";
 import Layout from "../components/layout";
 import WorkCard from "../components/WorkCard";
-// import Image from "../components/image";
-import ArrowDown from "../images/ArrowDown";
+import Strength from "../components/Strength";
 import SEO from "../components/seo";
+
 import IconEmail from "../images/IconEmail";
 import LogoGithub from "../images/LogoGithub";
 import LogoInstagram from "../images/LogoInstagram";
 import LogoDribbble from "../images/LogoDribbble";
 import LogoCodepen from "../images/LogoCodepen";
 import LogoLinkedin from "../images/LogoLinkedin";
-
-const work = [
-  {
-    name: "GitHub",
-    text: "Most of my more involved projects and ideas can be found here.",
-    url: "https://github.com/zacaree"
-  },
-  {
-    name: "Codepen",
-    text: "This is the coding laboratory where some of my fun experiments live.",
-    url: "https://codepen.io/Zacaree/"
-  }
-];
 
 const IndexPage = () => (
   <Layout>
@@ -56,68 +44,9 @@ const IndexPage = () => (
       <section className="aboutStrengths">
         <h3>Strengths - Gallup's StrengthsFinder</h3>
         <ul>
-          <li className="strength">
-            <div className="strengthLabel">
-              <p>Ideation</p>
-              <ArrowDown />
-            </div>
-            <div className="sub">
-              <p>
-                "People who are especially talented in the Ideation theme are fascinated by ideas.
-                They are able to find connections between seemingly disparate phenomena."
-              </p>
-            </div>
-          </li>
-          <li className="strength">
-            <div className="strengthLabel">
-              <p>Relator</p>
-              <ArrowDown />
-            </div>
-            <div className="sub">
-              <p>
-                "People who are especially talented in the Relator theme enjoy close relationships
-                with others. They find deep satisfaction in working hard with friends to achieve a
-                goal."
-              </p>
-            </div>
-          </li>
-          <li className="strength">
-            <div className="strengthLabel">
-              <p>Empathy</p>
-              <ArrowDown />
-            </div>
-            <div className="sub">
-              <p>
-                "People who are especially talented in the Empathy theme can sense the feelings of
-                other people by imagining themselves in others’ lives or others’ situations."
-              </p>
-            </div>
-          </li>
-          <li className="strength">
-            <div className="strengthLabel">
-              <p>Achiever</p>
-              <ArrowDown />
-            </div>
-            <div className="sub">
-              <p>
-                "People who are especially talented in the Achiever theme have a great deal of
-                stamina and work hard. They take great satisfaction from being busy and productive."
-              </p>
-            </div>
-          </li>
-          <li className="strength">
-            <div className="strengthLabel">
-              <p>Intellection</p>
-              <ArrowDown />
-            </div>
-            <div className="sub">
-              <p>
-                "People who are especially talented in the Intellection theme are characterized by
-                their intellectual activity. They are introspective and appreciate intellectual
-                discussions."
-              </p>
-            </div>
-          </li>
+          {strengthsData.map(strength => (
+            <Strength strength={strength} />
+          ))}
         </ul>
       </section>
       {/* <hr /> */}
@@ -125,7 +54,7 @@ const IndexPage = () => (
 
     <div className="ctr-right">
       <div className="ctr-Work">
-        {work.map(item => (
+        {workData.map(item => (
           <WorkCard work={item} />
         ))}
         {/* <hr /> */}
@@ -172,14 +101,6 @@ const IndexPage = () => (
         </div>
       </div>
     </div>
-
-    {/* <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 );
 
