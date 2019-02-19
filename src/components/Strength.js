@@ -28,7 +28,7 @@ export default class Strength extends Component {
           <ArrowDown />
         </div>
         {open && (
-          <div className="sub">
+          <div className="dropdown">
             <Quote />
             <p>{description}</p>
           </div>
