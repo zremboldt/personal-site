@@ -6,16 +6,9 @@ import "../styles/index.sass";
 import { workData, strengthsData } from "../components/data";
 import Layout from "../components/layout";
 import WorkCard from "../components/WorkCard";
+import ContactCard from "../components/ContactCard";
 import Strength from "../components/Strength";
 import SEO from "../components/seo";
-
-import IconEmail from "../images/IconEmail";
-import LogoGithub from "../images/LogoGithub";
-import LogoInstagram from "../images/LogoInstagram";
-import LogoDribbble from "../images/LogoDribbble";
-import LogoCodepen from "../images/LogoCodepen";
-import LogoLinkedin from "../images/LogoLinkedin";
-// import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const IndexPage = () => (
   <Layout>
@@ -45,8 +38,8 @@ const IndexPage = () => (
       <section className="aboutStrengths">
         <h3>Strengths - Gallup's StrengthsFinder</h3>
         <ul>
-          {strengthsData.map(strength => (
-            <Strength strength={strength} />
+          {strengthsData.map((strength, i) => (
+            <Strength strength={strength} key={i} />
           ))}
         </ul>
       </section>
@@ -55,52 +48,12 @@ const IndexPage = () => (
 
     <div className="ctr-right">
       <div className="ctr-Work">
-        {workData.map(item => (
-          <WorkCard work={item} />
+        {workData.map((item, i) => (
+          <WorkCard work={item} key={i} />
         ))}
         {/* <hr /> */}
       </div>
-
-      <div className="ctr-Contact">
-        <div className="card cardContact">
-          <div className="ctr-Text">
-            <h3>Say Hi :)</h3>
-            <p>
-              I'm available for remote projects. If you’d like to build something together, get in
-              touch.
-            </p>
-          </div>
-
-          <div className="email btn" data-clipboard-text="remboldtdesign@gmail.com">
-            <div className="txt-address">
-              <IconEmail />
-              <p>remboldtdesign@gmail.com</p>
-            </div>
-            <div className="txt-copied">
-              <p>Address copied.</p>
-              <p>Can't wait to hear from you!</p>
-            </div>
-          </div>
-
-          <div className="social">
-            <a href="https://dribbble.com/RemboldtDesign" className="btn">
-              <LogoDribbble />
-            </a>
-            <a href="https://codepen.io/Zacaree/" className="btn">
-              <LogoCodepen />
-            </a>
-            <a href="https://github.com/zacaree" className="btn">
-              <LogoGithub />
-            </a>
-            <a href="https://www.instagram.com/zremboldt/" className="btn">
-              <LogoInstagram />
-            </a>
-            <a href="https://www.linkedin.com/in/zac-remboldt/" className="btn">
-              <LogoLinkedin />
-            </a>
-          </div>
-        </div>
-      </div>
+      <ContactCard />
     </div>
   </Layout>
 );
