@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ArrowDown from "../images/ArrowDown";
+import Quote from "../images/Quote";
 
 export default class Strength extends Component {
   state = {
@@ -28,6 +29,7 @@ export default class Strength extends Component {
         </div>
         {open && (
           <div className="sub">
+            <Quote />
             <p>{description}</p>
           </div>
         )}
