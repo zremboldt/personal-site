@@ -6,6 +6,7 @@ import "../styles/index.sass";
 import { workData, strengthsData } from "../components/data";
 import Layout from "../components/layout";
 import WorkCard from "../components/WorkCard";
+import MobileWork from "../components/MobileWork";
 import ContactCard from "../components/ContactCard";
 import Strength from "../components/Strength";
 import SEO from "../components/seo";
@@ -20,6 +21,8 @@ const IndexPage = () => (
           concept to final development.
         </h1>
       </section>
+
+      <MobileWork />
 
       <section className="aboutStory">
         <h3>My Road to Code</h3>
@@ -43,15 +46,15 @@ const IndexPage = () => (
           ))}
         </ul>
       </section>
-      {/* <hr /> */}
     </div>
 
+    <hr className="mobile" />
+
     <div className="ctr-right">
-      <div className="ctr-Work">
+      <div className="ctr-work desktop">
         {workData.map((item, i) => (
           <WorkCard work={item} key={i} />
         ))}
-        {/* <hr /> */}
       </div>
       <ContactCard />
     </div>
