@@ -180,46 +180,45 @@ main
   min-width: 380px
 
 .card
-  display: block
   position: relative
   z-index: 3
-  width: 100%
-  margin-bottom: 20px
   background-color: $l1
   border-radius: 5px
-  box-shadow: 0 2px 1px $border
-  transition: all 0.3s
+  box-shadow: 0 10px 20px -2px $border
   // js handles opacity - fallback in <noscript> tag
   // opacity: 0
 
-  &:after
-    content: ''
-    position: absolute
-    z-index: -1
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    background-color: $l1
-    border-radius: 5px
-    box-shadow: 0 10px 20px -2px $border
-    transition: opacity 0.2s ease-in-out
-
-  &:hover:after
-    opacity: 0
-
   p
     margin: 0
-
-
-
-// ================================
 
 .ctr-Work
   margin-bottom: 100px
 
   .cardWork
+    display: block
+    width: 100%
+    margin-bottom: 20px
     padding: 30px 28% 30px 30px
+    background-color: $l1
+    border-radius: 5px
+    box-shadow: 0 2px 1px $border
+    transition: all 0.3s
+
+    &:after
+      content: ''
+      position: absolute
+      z-index: -1
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: $l1
+      border-radius: 5px
+      box-shadow: 0 10px 20px -2px $border
+      transition: opacity 0.2s ease-in-out
+
+    &:hover:after
+      opacity: 0
 
   .tab
     position: absolute
@@ -232,6 +231,12 @@ main
   svg
     margin: 10px
     fill: white
+
+
+
+
+
+
 
 
 
