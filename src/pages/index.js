@@ -23,6 +23,7 @@ const IndexPage = () => (
       </section>
 
       <MobileWork />
+      <hr className="mobile" />
 
       <section className="aboutStory">
         <h3>My Road to Code</h3>
@@ -48,7 +49,7 @@ const IndexPage = () => (
       </section>
     </div>
 
-    <hr className="mobile" />
+    <hr className="mobile hr2" />
 
     <div className="ctr-right">
       <div className="ctr-work desktop">

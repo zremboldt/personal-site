@@ -8,7 +8,6 @@ const WorkMobile = () => {
       {workData.map((item, i) => (
         <WorkCard work={item} key={i} />
       ))}
-      <hr />
     </div>
   );
 };
