@@ -39,17 +39,14 @@ export default class ContactCard extends Component {
 
         <CopyToClipboard onCopy={this.onCopy} text={this.state.value}>
           <div className="email btn">
-            {this.state.copied ? (
-              <div className="txt-copied">
-                <p>Address copied.</p>
-                <p>Can't wait to hear from you!</p>
-              </div>
-            ) : (
-              <div className="txt-address">
-                <IconEmail />
-                <p>remboldtdesign@gmail.com</p>
-              </div>
-            )}
+            <div className={`txt-address ${this.state.copied ? "address-active" : ""}`}>
+              <IconEmail />
+              <p>remboldtdesign@gmail.com</p>
+            </div>
+            <div className={`txt-copied ${this.state.copied ? "copied-active" : ""}`}>
+              <p>Address copied.</p>
+              <p>Can't wait to hear from you!</p>
+            </div>
           </div>
         </CopyToClipboard>
 
