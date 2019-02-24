@@ -81,6 +81,10 @@ body
 
 .wrapper
   max-width: 1200px
+  display: grid
+  grid-template-columns: 2fr 380px
+  grid-template-rows: 350px auto auto 1fr
+  grid-template-areas: "logo  logo" "aboutStatement  cards" "about  cards" "about cards"
   margin: 0 auto
   padding: 50px 30px 100px
 
@@ -96,10 +100,12 @@ main
   min-height: 100%
   background-color: $l2
 
+header
+  grid-area: logo 
+
 .logo
   display: block
   +size(254px, 94px)
-  margin-bottom: 206px
   background-color: $l1
   // background-color: $text
   fill: $text
@@ -114,55 +120,64 @@ main
 //  Left
 // --------------
 
-.ctr-about
-  margin-right: 80px
-  flex: 2
+// .ctr-about
+//   margin-right: 80px
+//   flex: 2
 
-  section
-    margin-bottom: 60px
+.aboutStatement
+  grid-area: aboutStatement
 
-  .strength
-    position: relative
-    padding: 20px 0
-    border-top: 1px solid $border
-    cursor: pointer
+.aboutStory
+  grid-area: about
 
-    &:last-of-type
-      border-bottom: 1px solid $border
+.aboutStrengths
+  grid-area: about
 
-  .strengthLabel
-    display: flex
-    justify-content: space-between
+section
+  margin-bottom: 60px
 
-    p
-      margin: 0 0 0 14px
+.strength
+  position: relative
+  padding: 20px 0
+  border-top: 1px solid $border
+  cursor: pointer
 
-    svg
-      margin: 0 12px 0 0
+  &:last-of-type
+    border-bottom: 1px solid $border
 
-  .dropdown
+.strengthLabel
+  display: flex
+  justify-content: space-between
+
+  p
+    margin: 0 0 0 14px
+
+  svg
+    margin: 0 12px 0 0
+
+.dropdown
+  position: absolute
+  right: 10px
+  top: 10px
+  z-index: 10
+  width: 70%
+  padding: 40px
+  padding-left: 56px 
+  background-color: $l1
+  border-radius: 5px
+  box-shadow: $shadow
+  pointer-events: none
+  transition: 0.3s ease-in-out
+
+  svg
     position: absolute
-    right: 10px
-    top: 10px
-    z-index: 10
-    width: 70%
-    padding: 40px
-    padding-left: 56px 
-    background-color: $l1
-    border-radius: 5px
-    box-shadow: $shadow
-    pointer-events: none
-    transition: 0.3s ease-in-out
-
-    svg
-      position: absolute
-      top: 6px
-      left: 10px
-      height: 70px
-      width: 70px
-      z-index: -1
-      fill: transparentize($border, .6)
-      transform: rotate(180deg)
+    top: 6px
+    left: 10px
+    height: 70px
+    width: 70px
+    z-index: -1
+    fill: transparentize($border, .6)
+    transform: rotate(180deg)
 
 
 
@@ -175,9 +190,10 @@ main
 //  Right
 // --------------
 
-.ctr-right
-  flex: 1
-  min-width: 380px
+// .ctr-right
+  // grid-area: cards
+  // flex: 1
+  // min-width: 380px
 
 .card
   position: relative
@@ -192,6 +208,7 @@ main
     margin: 0
 
 .ctr-work
+  grid-area: cards
   margin-bottom: 100px
 
   .cardWork
@@ -243,6 +260,7 @@ main
 // ================================
 
 .cardContact
+  grid-area: cards
   margin-bottom: 30px
 
   .ctr-Text
