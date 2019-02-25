@@ -83,8 +83,8 @@ body
   max-width: 1200px
   display: grid
   grid-template-columns: 2fr 380px
-  grid-template-rows: 350px auto auto 1fr
-  grid-template-areas: "logo  logo" "aboutStatement  cards" "about  cards" "about cards"
+  grid-template-rows: 350px auto auto auto
+  grid-template-areas: "logo  logo" "aboutStatement  workCards" "about  workCards" "aboutStrengths contactCard"
   margin: 0 auto
   padding: 50px 30px 100px
 
@@ -127,11 +127,15 @@ header
 .aboutStatement
   grid-area: aboutStatement
 
+// .ctr-aboutMain
+//   grid-area: about
+
 .aboutStory
   grid-area: about
 
 .aboutStrengths
-  grid-area: about
+  grid-area: aboutStrengths
+  
 
 section
   margin-bottom: 60px
@@ -208,8 +212,7 @@ section
     margin: 0
 
 .ctr-work
-  grid-area: cards
-  margin-bottom: 100px
+  grid-area: workCards
 
   .cardWork
     display: block
@@ -260,7 +263,7 @@ section
 // ================================
 
 .cardContact
-  grid-area: cards
+  grid-area: contactCard
   margin-bottom: 30px
 
   .ctr-Text
