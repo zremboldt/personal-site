@@ -13,7 +13,8 @@
 $l1: hsla(223, 13%, 97%, 1)
 $l2: hsla(200, 20%, 91%, 1)
 $border: hsla(200, 20%, 80%, 1)
-$text: hsla(205, 9%, 24%, 1)
+// $text: hsla(205, 9%, 24%, 1)
+$text: hsla(205, 9%, 24%, .05)
 
 $shadow: 0 10px 20px -2px $border
 
@@ -85,6 +86,7 @@ body
   grid-template-columns: 2fr 380px
   grid-template-rows: 350px auto auto auto
   grid-template-areas: "logo  logo" "aboutStatement  workCards" "about  workCards" "aboutStrengths contactCard"
+  grid-gap: 0 80px
   margin: 0 auto
   padding: 50px 30px 100px
 
@@ -204,7 +206,7 @@ section
   z-index: 3
   background-color: $l1
   border-radius: 5px
-  box-shadow: 0 10px 20px -2px $border
+  box-shadow: 0 10px 20px -2px $border, 0 1px 6px $border
   // js handles opacity - fallback in <noscript> tag
   // opacity: 0
 
@@ -221,7 +223,7 @@ section
     padding: 30px 28% 30px 30px
     background-color: $l1
     border-radius: 5px
-    box-shadow: 0 2px 1px $border
+    box-shadow: 0 2px 1px $border,0 1px 6px $border
     transition: all 0.3s
 
     &:after
