@@ -1,6 +1,5 @@
 import React from "react";
 // import { Link } from "gatsby";
-import "../styles/baseStyles.css";
 import "../styles/index.sass";
 
 import { workData, strengthsData } from "../components/data";
@@ -51,12 +50,12 @@ const IndexPage = () => (
         </ul>
       </section>
 
-      {/* <hr className="mobile" /> */}
       <div className="ctr-work">
         {workData.map((item, i) => (
           <WorkCard work={item} key={i} />
         ))}
       </div>
+      {/* <hr /> */}
       <ContactCard />
     </div>
   </>
