@@ -27,7 +27,7 @@ $marBottom: 90px // this is used throughout as the standardized spacing between 
 
 // Text
 @import url('https://fonts.googleapis.com/css?family=Nunito:200,400,700')
-// @import url('https://fonts.googleapis.com/css?family=Farsan|Shrikhand')
+
 
 h1, h3, p, a, ul, li
   color: $text
@@ -36,7 +36,7 @@ h1, h3, p, a, ul, li
 
 h2, h3, h4, h5, h6
   font-weight: 700
-  // font-family: 'Shrikhand', cursive
+
 h1
   font-weight: 200
 
@@ -53,13 +53,18 @@ svg
   fill: $text
 
 hr
-  display: block
+  display: none
+  grid-area: hr1
   width: 20%
   height: 0
   border: 0
   border-top: 3px solid $border
-  margin: 100px auto
+  margin: 0 auto
+  margin-bottom: $marBottom
   padding: 0
+
+  &:last-of-type
+    grid-area: hr2
 
 .btn
   cursor: pointer
@@ -337,7 +342,6 @@ section
   
 
 
-
 // ================================
 
 @media (max-width: 850px)
@@ -349,7 +353,7 @@ section
     max-width: 500px
     grid-template-columns: auto
     grid-template-rows: 210px auto
-    grid-template-areas: "logo" "aboutStatement" "workCards" "aboutStory" "aboutStrengths" "contactCard"
+    grid-template-areas: "logo" "aboutStatement" "workCards" "hr1" "aboutStory" "aboutStrengths" "hr2" "contactCard"
     padding: 30px 10px
 
   .logo
@@ -358,6 +362,8 @@ section
   .aboutStatement h1
     text-align: center
 
+  hr
+    display: block
 
 
 
@@ -368,10 +374,11 @@ section
   .aboutStatement
     padding: 0 20px
 
-  hr
-    margin: 60px auto
+  hr:last-of-type
+    display: none
 
-  .aboutStory, .aboutStrengths
+  .aboutStory, 
+  .aboutStrengths
     display: none
 
 

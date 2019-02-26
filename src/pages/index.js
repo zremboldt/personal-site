@@ -14,7 +14,7 @@ const IndexPage = () => (
   <>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     {/* Try using a grid background color to make the background instead */}
-    {/* <div className="background" /> */}
+    <div className="background" />
     <div className="wrapper">
       <header>
         <Logo />
@@ -55,8 +55,11 @@ const IndexPage = () => (
           <WorkCard work={item} key={i} />
         ))}
       </div>
-      {/* <hr /> */}
+
       <ContactCard />
+
+      <hr />
+      <hr />
     </div>
   </>
 );
