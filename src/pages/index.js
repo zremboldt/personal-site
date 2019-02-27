@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "gatsby";
 import "../styles/index.sass";
+import { Spring } from "react-spring/renderprops";
 
 import { workData, strengthsData } from "../components/data";
 import Logo from "../images/Logo";
@@ -36,7 +37,13 @@ export default class IndexPage extends Component {
     return (
       <>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <SplashScreen />
+        <Spring
+          from={{ opacity: 1 }}
+          to={{ opacity: 0 }}
+          config={{ tension: 170, friction: 26, delay: 3000 }}
+        >
+          {props => <SplashScreen style={props} />}
+        </Spring>
         <div className="background" />
         <div className="wrapper">
           <header>
