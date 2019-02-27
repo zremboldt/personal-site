@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "gatsby";
 import "../styles/index.sass";
-import { Spring } from "react-spring/renderprops";
+import { Transition } from "react-spring/renderprops";
 
 import { workData, strengthsData } from "../components/data";
 import Logo from "../images/Logo";
@@ -14,36 +14,42 @@ import SEO from "../components/seo";
 export default class IndexPage extends Component {
   constructor(props) {
     super(props);
+    this.state = { showSplashScreen: true };
     this.card1 = React.createRef();
     this.card2 = React.createRef();
     this.card3 = React.createRef();
   }
 
   componentDidMount() {
-    const cards = [this.card1.current, this.card2.current, this.card3.current];
-
-    const animate = (el, cl) => {
-      for (let i = 0; i < el.length; i++) {
-        setTimeout(() => {
-          el[i].classList.add(cl);
-        }, 3200 + 125 * i);
-      }
-    };
-
-    animate(cards, "fadeInLeft");
+    this.hideSplashScreen();
+    this.animateCards();
   }
 
+  hideSplashScreen = () => {
+    setTimeout(() => {
+      this.setState({ showSS: false });
+    }, 2800);
+  };
+
+  animateCards = () => {
+    const cards = [this.card1.current, this.card2.current, this.card3.current];
+    cards.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.add("fadeInLeft");
+      }, 3200 + 125 * i);
+    });
+  };
+
   render() {
+    const { showSplashScreen } = this.state;
     return (
       <>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <Spring
-          from={{ opacity: 1 }}
-          to={{ opacity: 0 }}
-          config={{ tension: 170, friction: 26, delay: 2700 }}
-        >
-          {props => <SplashScreen style={props} />}
-        </Spring>
+
+        <Transition native items={showSplashScreen} enter={{ opacity: 1 }} leave={{ opacity: 0 }}>
+          {showSplashScreen => showSplashScreen && (props => <SplashScreen style={props} />)}
+        </Transition>
+
         <div className="background" />
         <div className="wrapper">
           <header>
