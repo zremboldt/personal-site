@@ -11,7 +11,7 @@ export default class SplashScreen extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ opacityTo0: true });
-    }, 3000);
+    }, 2800);
   }
 
   // After splashscreen is hidden, set the CSS property display to none.
@@ -19,7 +19,7 @@ export default class SplashScreen extends Component {
     if (this.state.opacityTo0) {
       setTimeout(() => {
         this.setState({ displayToNone: true });
-      }, 500);
+      }, 200);
     }
   }
 
