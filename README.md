@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f6150418-9878-412b-8ea6-9c9d9be761a2/deploy-status)](https://app.netlify.com/sites/wizardly-sammet-ea42d6/deploys)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
