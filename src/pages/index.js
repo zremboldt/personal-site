@@ -40,7 +40,7 @@ export default class IndexPage extends Component {
         <Spring
           from={{ opacity: 1 }}
           to={{ opacity: 0 }}
-          config={{ tension: 170, friction: 26, delay: 3000 }}
+          config={{ tension: 170, friction: 26, delay: 2700 }}
         >
           {props => <SplashScreen style={props} />}
         </Spring>
