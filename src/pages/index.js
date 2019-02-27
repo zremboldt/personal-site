@@ -27,7 +27,7 @@ export default class IndexPage extends Component {
 
   hideSplashScreen = () => {
     setTimeout(() => {
-      this.setState({ showSS: false });
+      this.setState({ showSplashScreen: false });
     }, 2800);
   };
 
@@ -46,7 +46,13 @@ export default class IndexPage extends Component {
       <>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
-        <Transition native items={showSplashScreen} enter={{ opacity: 1 }} leave={{ opacity: 0 }}>
+        <Transition
+          native
+          items={showSplashScreen}
+          from={{ opacity: 1 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+        >
           {showSplashScreen => showSplashScreen && (props => <SplashScreen style={props} />)}
         </Transition>
 
