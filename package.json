@@ -19,8 +19,7 @@
     "react": "^16.8.2",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.7.0",
-    "react-helmet": "^5.2.0",
-    "react-spring": "^8.0.8"
+    "react-helmet": "^5.2.0"
   },
   "keywords": [
     "gatsby"
