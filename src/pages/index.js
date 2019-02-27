@@ -4,6 +4,7 @@ import "../styles/index.sass";
 
 import { workData, strengthsData } from "../components/data";
 import Logo from "../images/Logo";
+import SplashScreen from "../components/SplashScreen";
 import WorkCard from "../components/WorkCard";
 import ContactCard from "../components/ContactCard";
 import Strength from "../components/Strength";
@@ -20,24 +21,22 @@ export default class IndexPage extends Component {
   componentDidMount() {
     const cards = [this.card1.current, this.card2.current, this.card3.current];
 
-    const animate = {
-      sequence: function(el, cl) {
-        for (let i = 0; i < el.length; i++) {
-          setTimeout(function() {
-            el[i].classList.add(cl);
-          }, 3200 + 125 * i);
-        }
+    const animate = (el, cl) => {
+      for (let i = 0; i < el.length; i++) {
+        setTimeout(() => {
+          el[i].classList.add(cl);
+        }, 3200 + 125 * i);
       }
     };
 
-    animate.sequence(cards, "fadeInLeft");
+    animate(cards, "fadeInLeft");
   }
 
   render() {
     return (
       <>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        {/* Try using a grid background color to make the background instead */}
+        <SplashScreen />
         <div className="background" />
         <div className="wrapper">
           <header>
