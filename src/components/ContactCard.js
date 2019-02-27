@@ -28,7 +28,7 @@ export default class ContactCard extends Component {
 
   render() {
     return (
-      <div className="card cardContact">
+      <>
         <div className="ctr-Text">
           <h3>Say Hi :)</h3>
           <p>
@@ -67,7 +67,7 @@ export default class ContactCard extends Component {
             <LogoLinkedin />
           </a>
         </div>
-      </div>
+      </>
     );
   }
 }

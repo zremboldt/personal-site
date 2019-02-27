@@ -5,12 +5,34 @@ import "../styles/index.sass";
 import { workData, strengthsData } from "../components/data";
 import Logo from "../images/Logo";
 import WorkCard from "../components/WorkCard";
-// import MobileWork from "../components/MobileWork";
 import ContactCard from "../components/ContactCard";
 import Strength from "../components/Strength";
 import SEO from "../components/seo";
 
 export default class IndexPage extends Component {
+  constructor(props) {
+    super(props);
+    this.card1 = React.createRef();
+    this.card2 = React.createRef();
+    this.card3 = React.createRef();
+  }
+
+  componentDidMount() {
+    const cards = [this.card1.current, this.card2.current, this.card3.current];
+
+    const animate = {
+      sequence: function(el, cl) {
+        for (let i = 0; i < el.length; i++) {
+          setTimeout(function() {
+            el[i].classList.add(cl);
+          }, 3200 + 125 * i);
+        }
+      }
+    };
+
+    animate.sequence(cards, "fadeInLeft");
+  }
+
   render() {
     return (
       <>
@@ -52,16 +74,18 @@ export default class IndexPage extends Component {
             </ul>
           </section>
 
-          {/* <div className="ctr-work">
-            {workData.map((item, i) => (
-              <WorkCard work={item} key={i} />
-            ))}
-          </div> */}
+          <div className="ctr-work">
+            <a href={workData[0].url} className="card cardWork" ref={this.card1}>
+              <WorkCard work={workData[0]} />
+            </a>
+            <a href={workData[1].url} className="card cardWork" ref={this.card2}>
+              <WorkCard work={workData[1]} />
+            </a>
+          </div>
 
-          <WorkCard work={workData[0]} />
-          <WorkCard work={workData[1]} />
-
-          <ContactCard />
+          <div className="card cardContact" ref={this.card3}>
+            <ContactCard />
+          </div>
 
           <hr />
           <hr />
