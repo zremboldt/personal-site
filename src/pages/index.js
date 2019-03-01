@@ -2,6 +2,8 @@ import React, { Component } from "react";
 // import { Link } from "gatsby";
 import "../styles/index.sass";
 import SplashScreen from "../components/SplashScreen";
+import Landing from "./landing";
+import RouteTransition from "../components/RouteTransition";
 import SEO from "../components/seo";
 import { navigate } from "@reach/router";
 
@@ -20,7 +22,10 @@ export default class IndexPage extends Component {
     return (
       <>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <SplashScreen />
+        <RouteTransition>
+          <SplashScreen />
+          <Landing />
+        </RouteTransition>
       </>
     );
   }

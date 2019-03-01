@@ -36,7 +36,7 @@ export default class IndexPage extends Component {
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
         <div className="background" />
-        <div className="wrapper">
+        <div className="wrapper page">
           <header>
             <Logo />
           </header>
