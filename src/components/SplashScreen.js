@@ -18,18 +18,10 @@ export default class SplashScreen extends Component {
   render() {
     const { showSplashScreen } = this.state;
     return (
-      // <Spring
-      //   native
-      //   config={{ delay: 2700, tension: 120, friction: 40 }}
-      //   from={{ opacity: 1 }}
-      //   to={{ opacity: 0 }}
-      // >
-      //   {props => (
       <Transition
         native
         items={showSplashScreen}
         initial={{ opacity: 1 }}
-        // from={{ opacity: 1 }}
         enter={{ opacity: 1 }}
         leave={{ opacity: 0 }}
       >
@@ -47,7 +39,6 @@ export default class SplashScreen extends Component {
           ))
         }
       </Transition>
-      // </Spring>
     );
   }
 }
