@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "gatsby";
-import PageTransition from "gatsby-plugin-page-transitions";
+import { Spring, animated } from "react-spring/renderprops";
 import { workData, strengthsData } from "../components/data";
 import Logo from "../images/Logo";
 import WorkCard from "../components/WorkCard";
@@ -31,34 +31,43 @@ export default class Landing extends Component {
 
   render() {
     return (
-      <PageTransition transitionTime={500}>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <Spring
+        native
+        config={{ tension: 120, friction: 60 }}
+        from={{ opacity: 0 }}
+        to={{ opacity: 1 }}
+      >
+        {props => (
+          <animated.div style={props}>
+            <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
-        <div className="background" />
-        <div className="wrapper">
-          <header>
-            <Logo />
-          </header>
+            <div className="background" />
+            <div className="wrapper">
+              <header>
+                <Logo />
+              </header>
 
-          <About data={strengthsData} />
+              <About data={strengthsData} />
 
-          <div className="ctr-work">
-            <a href={workData[0].url} className="card cardWork" ref={this.card1}>
-              <WorkCard work={workData[0]} />
-            </a>
-            <a href={workData[1].url} className="card cardWork" ref={this.card2}>
-              <WorkCard work={workData[1]} />
-            </a>
-          </div>
+              <div className="ctr-work">
+                <a href={workData[0].url} className="card cardWork" ref={this.card1}>
+                  <WorkCard work={workData[0]} />
+                </a>
+                <a href={workData[1].url} className="card cardWork" ref={this.card2}>
+                  <WorkCard work={workData[1]} />
+                </a>
+              </div>
 
-          <div className="card cardContact" ref={this.card3}>
-            <ContactCard />
-          </div>
+              <div className="card cardContact" ref={this.card3}>
+                <ContactCard />
+              </div>
 
-          <hr />
-          <hr />
-        </div>
-      </PageTransition>
+              <hr />
+              <hr />
+            </div>
+          </animated.div>
+        )}
+      </Spring>
     );
   }
 }
