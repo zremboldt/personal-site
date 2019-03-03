@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "gatsby";
 import PageTransition from "gatsby-plugin-page-transitions";
-
 import { workData, strengthsData } from "../components/data";
 import Logo from "../images/Logo";
 import WorkCard from "../components/WorkCard";
