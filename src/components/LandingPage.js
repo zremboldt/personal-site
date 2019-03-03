@@ -2,12 +2,12 @@ import React, { Component } from "react";
 // import { Link } from "gatsby";
 import "../styles/index.sass";
 import { Spring, animated } from "react-spring/renderprops";
-import { workData, strengthsData } from "../components/data";
+import { workData, strengthsData } from "./data";
 import Logo from "../images/Logo";
-import WorkCard from "../components/WorkCard";
-import ContactCard from "../components/ContactCard";
-import About from "../components/About";
-import SEO from "../components/seo";
+import WorkCard from "./WorkCard";
+import ContactCard from "./ContactCard";
+import About from "./About";
+import SEO from "./seo";
 
 export default class Landing extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ export default class Landing extends Component {
     cards.forEach((card, i) => {
       setTimeout(() => {
         card.classList.add("fadeInLeft");
-      }, 500 + 125 * i);
+      }, 3200 + 125 * i);
     });
   };
 
@@ -34,7 +34,7 @@ export default class Landing extends Component {
     return (
       <Spring
         native
-        config={{ tension: 120, friction: 60 }}
+        config={{ delay: 1000, tension: 100, friction: 10 }}
         from={{ opacity: 0 }}
         to={{ opacity: 1 }}
       >
