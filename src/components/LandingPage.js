@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "gatsby";
 import "../styles/index.sass";
-// import { Spring, animated } from "react-spring/renderprops";
+import { Spring, animated } from "react-spring/renderprops";
 import { workData, strengthsData } from "./data";
 import Logo from "../images/Logo";
 import WorkCard from "./WorkCard";
@@ -32,45 +32,43 @@ export default class Landing extends Component {
 
   render() {
     return (
-      // <Spring
-      //   native
-      //   config={{ delay: 1000, tension: 100, friction: 10 }}
-      //   from={{ opacity: 0 }}
-      //   to={{ opacity: 1 }}
-      // >
-      //   {props => (
-      //     <animated.div style={props}>
-      <>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <Spring
+        native
+        config={{ delay: 1000, tension: 100, friction: 10 }}
+        from={{ opacity: 0 }}
+        to={{ opacity: 1 }}
+      >
+        {props => (
+          <animated.div style={props}>
+            <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
-        <div className="background" />
-        <div className="wrapper">
-          <header>
-            <Logo />
-          </header>
+            <div className="background" />
+            <div className="wrapper">
+              <header>
+                <Logo />
+              </header>
 
-          <About data={strengthsData} />
+              <About data={strengthsData} />
 
-          <div className="ctr-work">
-            <a href={workData[0].url} className="card cardWork" ref={this.card1}>
-              <WorkCard work={workData[0]} />
-            </a>
-            <a href={workData[1].url} className="card cardWork" ref={this.card2}>
-              <WorkCard work={workData[1]} />
-            </a>
-          </div>
+              <div className="ctr-work">
+                <a href={workData[0].url} className="card cardWork" ref={this.card1}>
+                  <WorkCard work={workData[0]} />
+                </a>
+                <a href={workData[1].url} className="card cardWork" ref={this.card2}>
+                  <WorkCard work={workData[1]} />
+                </a>
+              </div>
 
-          <div className="card cardContact" ref={this.card3}>
-            <ContactCard />
-          </div>
+              <div className="card cardContact" ref={this.card3}>
+                <ContactCard />
+              </div>
 
-          <hr />
-          <hr />
-        </div>
-      </>
-      //     </animated.div>
-      //   )}
-      // </Spring>
+              <hr />
+              <hr />
+            </div>
+          </animated.div>
+        )}
+      </Spring>
     );
   }
 }
