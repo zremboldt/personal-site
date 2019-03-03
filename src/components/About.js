@@ -24,9 +24,9 @@ const About = props => {
           I’ll build/learn next.
         </p>
         <p>
-          Most recently along this journey I’ve been diving into the fundamentals of Computer
-          Science; exploring data structures and algorithms and learning ways of determining the
-          pros/cons of each in a given situation.
+          Most recently on this journey I’ve been diving into the fundamentals of computer science;
+          exploring data structures and algorithms and learning ways to determine the pros/cons of
+          each in a given situation.
         </p>
       </section>
 
