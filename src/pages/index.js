@@ -12,7 +12,7 @@ export default class IndexPage extends Component {
   navigateToLanding = () => {
     setTimeout(() => {
       navigate(`/landing`);
-    }, 3000);
+    }, 2800);
   };
 
   render() {
