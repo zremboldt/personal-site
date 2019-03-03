@@ -9,7 +9,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 export default class ContactCard extends Component {
   state = {
-    value: "remboldtdesign@gmail.com",
+    value: "zremboldt@gmail.com",
     copied: false
   };
 
@@ -41,7 +41,7 @@ export default class ContactCard extends Component {
           <div className="email btn">
             <div className={`txt-address ${this.state.copied ? "address-active" : ""}`}>
               <IconEmail />
-              <p>remboldtdesign@gmail.com</p>
+              <p>zremboldt@gmail.com</p>
             </div>
             <div className={`txt-copied ${this.state.copied ? "copied-active" : ""}`}>
               <p>Address copied.</p>
