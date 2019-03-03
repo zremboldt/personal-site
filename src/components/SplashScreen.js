@@ -7,7 +7,7 @@ export default class SplashScreen extends Component {
     return (
       <Spring
         native
-        config={{ delay: 2800, tension: 120, friction: 60 }}
+        config={{ delay: 2700, tension: 120, friction: 50 }}
         from={{ opacity: 1 }}
         to={{ opacity: 0 }}
       >
