@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "gatsby";
+import "../styles/index.sass";
 import { Spring, animated } from "react-spring/renderprops";
 import { workData, strengthsData } from "../components/data";
 import Logo from "../images/Logo";
