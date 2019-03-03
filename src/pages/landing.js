@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "gatsby";
-import "../styles/index.sass";
-
+import PageTransition from "gatsby-plugin-page-transitions";
 import { workData, strengthsData } from "../components/data";
 import Logo from "../images/Logo";
 import WorkCard from "../components/WorkCard";
@@ -9,7 +8,7 @@ import ContactCard from "../components/ContactCard";
 import About from "../components/About";
 import SEO from "../components/seo";
 
-export default class IndexPage extends Component {
+export default class Landing extends Component {
   constructor(props) {
     super(props);
     this.card1 = React.createRef();
@@ -32,11 +31,11 @@ export default class IndexPage extends Component {
 
   render() {
     return (
-      <>
+      <PageTransition transitionTime={500}>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
         <div className="background" />
-        <div className="wrapper page">
+        <div className="wrapper">
           <header>
             <Logo />
           </header>
@@ -59,7 +58,7 @@ export default class IndexPage extends Component {
           <hr />
           <hr />
         </div>
-      </>
+      </PageTransition>
     );
   }
 }
