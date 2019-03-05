@@ -53,13 +53,28 @@ export default class Landing extends Component {
               <About data={strengthsData} />
 
               <div className="ctr-work">
-                <a href={workData[2].url} className="card cardWork" ref={this.card1}>
+                <a
+                  href={workData[2].url}
+                  className="card cardWork"
+                  ref={this.card1}
+                  target="_blank"
+                >
                   <WorkCard work={workData[2]} />
                 </a>
-                <a href={workData[0].url} className="card cardWork" ref={this.card2}>
+                <a
+                  href={workData[0].url}
+                  className="card cardWork"
+                  ref={this.card2}
+                  target="_blank"
+                >
                   <WorkCard work={workData[0]} />
                 </a>
-                <a href={workData[1].url} className="card cardWork" ref={this.card3}>
+                <a
+                  href={workData[1].url}
+                  className="card cardWork"
+                  ref={this.card3}
+                  target="_blank"
+                >
                   <WorkCard work={workData[1]} />
                 </a>
               </div>
