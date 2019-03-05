@@ -54,6 +54,7 @@ export default class Landing extends Component {
 
               <div className="ctr-work">
                 <a
+                  aria-label={workData[2].name}
                   href={workData[2].url}
                   className="card cardWork"
                   ref={this.card1}
@@ -63,6 +64,7 @@ export default class Landing extends Component {
                   <WorkCard work={workData[2]} />
                 </a>
                 <a
+                  aria-label={workData[0].name}
                   href={workData[0].url}
                   className="card cardWork"
                   ref={this.card2}
@@ -72,6 +74,7 @@ export default class Landing extends Component {
                   <WorkCard work={workData[0]} />
                 </a>
                 <a
+                  aria-label={workData[1].name}
                   href={workData[1].url}
                   className="card cardWork"
                   ref={this.card3}

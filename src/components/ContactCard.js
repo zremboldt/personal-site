@@ -51,19 +51,49 @@ export default class ContactCard extends Component {
         </CopyToClipboard>
 
         <div className="social">
-          <a href="https://dribbble.com/RemboldtDesign" className="btn">
+          <a
+            aria-label="Dribbble"
+            href="https://dribbble.com/RemboldtDesign"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LogoDribbble />
           </a>
-          <a href="https://codepen.io/Zacaree/" className="btn">
+          <a
+            aria-label="CodePen"
+            href="https://codepen.io/Zacaree/"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LogoCodepen />
           </a>
-          <a href="https://github.com/zacaree" className="btn">
+          <a
+            aria-label="GitHub"
+            href="https://github.com/zacaree"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LogoGithub />
           </a>
-          <a href="https://www.instagram.com/zremboldt/" className="btn">
+          <a
+            aria-label="Instagram"
+            href="https://www.instagram.com/zremboldt/"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LogoInstagram />
           </a>
-          <a href="https://www.linkedin.com/in/zac-remboldt/" className="btn">
+          <a
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/zac-remboldt/"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <LogoLinkedin />
           </a>
         </div>
