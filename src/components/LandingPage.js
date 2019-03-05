@@ -58,6 +58,7 @@ export default class Landing extends Component {
                   className="card cardWork"
                   ref={this.card1}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <WorkCard work={workData[2]} />
                 </a>
@@ -66,6 +67,7 @@ export default class Landing extends Component {
                   className="card cardWork"
                   ref={this.card2}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <WorkCard work={workData[0]} />
                 </a>
@@ -74,6 +76,7 @@ export default class Landing extends Component {
                   className="card cardWork"
                   ref={this.card3}
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <WorkCard work={workData[1]} />
                 </a>
