@@ -3,20 +3,8 @@ import { Transition, animated } from "react-spring/renderprops";
 import Logo from "../images/Logo";
 
 export default class SplashScreen extends Component {
-  state = { showSplashScreen: true };
-
-  componentDidMount() {
-    this.hideSplashScreen();
-  }
-
-  hideSplashScreen = () => {
-    setTimeout(() => {
-      this.setState({ showSplashScreen: false });
-    }, 2800);
-  };
-
   render() {
-    const { showSplashScreen } = this.state;
+    const { showSplashScreen } = this.props;
     return (
       <Transition
         native

@@ -31,6 +31,7 @@ export default class Landing extends Component {
   };
 
   render() {
+    const { showSplashScreen } = this.props;
     return (
       <Spring
         native
@@ -39,11 +40,11 @@ export default class Landing extends Component {
         to={{ opacity: 1 }}
       >
         {props => (
-          <animated.div style={props}>
+          <animated.div style={props} className={`wrapper ${showSplashScreen ? "scrollLock" : ""}`}>
             <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
             <div className="background" />
-            <div className="wrapper">
+            <main>
               <header>
                 <Logo />
               </header>
@@ -65,7 +66,7 @@ export default class Landing extends Component {
 
               <hr />
               <hr />
-            </div>
+            </main>
           </animated.div>
         )}
       </Spring>

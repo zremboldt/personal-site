@@ -5,12 +5,25 @@ import SplashScreen from "../components/SplashScreen";
 import LandingPage from "../components/LandingPage";
 
 export default class IndexPage extends Component {
+  state = { showSplashScreen: true };
+
+  componentDidMount() {
+    this.hideSplashScreen();
+  }
+
+  hideSplashScreen = () => {
+    setTimeout(() => {
+      this.setState({ showSplashScreen: false });
+    }, 2800);
+  };
+
   render() {
+    const { showSplashScreen } = this.state;
     return (
       <>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <SplashScreen />
-        <LandingPage />
+        <SplashScreen showSplashScreen={showSplashScreen} />
+        <LandingPage showSplashScreen={showSplashScreen} />
       </>
     );
   }
