@@ -8,6 +8,11 @@ export const workData = [
     name: "Codepen",
     text: "This is the coding laboratory where some of my fun experiments live.",
     url: "https://codepen.io/Zacaree/"
+  },
+  {
+    name: "Resume",
+    text: "Highlighted projects, accomplishments, work experience, etc.",
+    url: "https://drive.google.com/open?id=11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF"
   }
 ];
 

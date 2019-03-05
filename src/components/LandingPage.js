@@ -15,6 +15,7 @@ export default class Landing extends Component {
     this.card1 = React.createRef();
     this.card2 = React.createRef();
     this.card3 = React.createRef();
+    this.card4 = React.createRef();
   }
 
   componentDidMount() {
@@ -22,7 +23,7 @@ export default class Landing extends Component {
   }
 
   animateCards = () => {
-    const cards = [this.card1.current, this.card2.current, this.card3.current];
+    const cards = [this.card1.current, this.card2.current, this.card3.current, this.card4.current];
     cards.forEach((card, i) => {
       setTimeout(() => {
         card.classList.add("fadeInLeft");
@@ -52,15 +53,18 @@ export default class Landing extends Component {
               <About data={strengthsData} />
 
               <div className="ctr-work">
-                <a href={workData[0].url} className="card cardWork" ref={this.card1}>
+                <a href={workData[2].url} className="card cardWork" ref={this.card1}>
+                  <WorkCard work={workData[2]} />
+                </a>
+                <a href={workData[0].url} className="card cardWork" ref={this.card2}>
                   <WorkCard work={workData[0]} />
                 </a>
-                <a href={workData[1].url} className="card cardWork" ref={this.card2}>
+                <a href={workData[1].url} className="card cardWork" ref={this.card3}>
                   <WorkCard work={workData[1]} />
                 </a>
               </div>
 
-              <div className="card cardContact" ref={this.card3}>
+              <div className="card cardContact" ref={this.card4}>
                 <ContactCard />
               </div>
 
