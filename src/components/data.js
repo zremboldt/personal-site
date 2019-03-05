@@ -12,7 +12,7 @@ export const workData = [
   {
     name: "Resume",
     text: "Highlighted projects, accomplishments, work experience, etc.",
-    url: "https://drive.google.com/open?id=11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF"
+    url: "https://drive.google.com/file/d/11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF/view?usp=sharing"
   }
 ];
 
