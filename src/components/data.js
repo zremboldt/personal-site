@@ -1,5 +1,10 @@
 export const workData = [
   {
+    name: "Resume",
+    text: "Highlighted projects, accomplishments, work experience, etc.",
+    url: "https://drive.google.com/file/d/11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF/view?usp=sharing"
+  },
+  {
     name: "GitHub",
     text: "Most of my more involved projects and ideas can be found here.",
     url: "https://github.com/zacaree"
@@ -8,11 +13,6 @@ export const workData = [
     name: "Codepen",
     text: "This is the coding laboratory where some of my fun experiments live.",
     url: "https://codepen.io/Zacaree/"
-  },
-  {
-    name: "Resume",
-    text: "Highlighted projects, accomplishments, work experience, etc.",
-    url: "https://drive.google.com/file/d/11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF/view?usp=sharing"
   }
 ];
 
