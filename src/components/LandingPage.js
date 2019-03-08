@@ -4,12 +4,12 @@ import "../styles/index.sass";
 import { Spring, animated } from "react-spring/renderprops";
 import { workData, strengthsData } from "./data";
 import Logo from "../images/Logo";
-import ContactCard from "./ContactCard";
 import About from "./About";
-import SEO from "./seo";
+import ContactCard from "./ContactCard";
 import IconResume from "../images/IconResume";
 import LogoGithub from "../images/LogoGithub";
 import LogoCodepen from "../images/LogoCodepen";
+import SEO from "./seo";
 
 export default class Landing extends Component {
   constructor(props) {
