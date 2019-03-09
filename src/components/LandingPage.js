@@ -6,7 +6,7 @@ import { workData, strengthsData } from "./data";
 import Logo from "../images/Logo";
 import About from "./About";
 import ContactCard from "./ContactCard";
-import IconResume from "../images/iconResume";
+import IconResume from "../images/IconResume";
 import LogoGithub from "../images/LogoGithub";
 import LogoCodepen from "../images/LogoCodepen";
 import SEO from "./seo";
