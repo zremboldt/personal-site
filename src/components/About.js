@@ -7,7 +7,7 @@ const About = props => {
       <section className="aboutStatement">
         <h1>
           Drawing from a strong background in design, I build engaging user focused experiences from
-          concept to final development.
+          initial concept to final deployment.
         </h1>
       </section>
 
