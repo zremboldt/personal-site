@@ -3,17 +3,13 @@
   "private": true,
   "description": "The personal landing page of Zac Remboldt – Designer // Developer",
   "version": "0.1.0",
-  "author": "Zac Remboldt <remboldtdesign@gmail.com>",
+  "author": "Zac Remboldt <zremboldt@gmail.com>",
   "dependencies": {
     "gatsby": "^2.1.4",
-    "gatsby-image": "^2.0.29",
     "gatsby-plugin-manifest": "^2.0.17",
     "gatsby-plugin-offline": "^2.0.24",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sass": "^2.0.10",
-    "gatsby-plugin-sharp": "^2.2.36",
-    "gatsby-source-filesystem": "^2.0.23",
-    "gatsby-transformer-sharp": "^2.1.13",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.2",
@@ -35,6 +31,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zacaree/personal-site"
+    "url": "https://github.com/zremboldt/personal-site"
   }
 }
