@@ -1,20 +1,25 @@
+import LogoGithub from './images/logo-github';
+import LogoInstagram from './images/logo-instagram';
+import LogoDribbble from './images/logo-dribbble';
+import LogoCodepen from './images/logo-codepen';
+import LogoLinkedin from './images/logo-linkedin';
+
 export const workData = [
   {
     name: 'Resume',
     text: 'Highlighted projects, accomplishments, work experience, etc.',
-    url:
-      'https://drive.google.com/file/d/11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF/view?usp=sharing'
+    url: 'https://drive.google.com/file/d/11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF/view?usp=sharing',
   },
   {
     name: 'GitHub',
     text: 'Most of my more involved projects and ideas can be found here.',
-    url: 'https://github.com/zremboldt'
+    url: 'https://github.com/zremboldt',
   },
   {
     name: 'Codepen',
     text:
       'This is the coding laboratory where some of my fun experiments live.',
-    url: 'https://codepen.io/zremboldt'
+    url: 'https://codepen.io/zremboldt',
   }
 ];
 
@@ -44,4 +49,32 @@ export const strengthsData = [
     description:
       'People who are especially talented in the Intellection theme are characterized by their intellectual activity. They are introspective and appreciate intellectual discussions.'
   }
+];
+
+export const socialData = [
+  {
+    label: "Dribbble",
+    href: "https://dribbble.com/RemboldtDesign",
+    icon: LogoDribbble
+  },
+  {
+    label: "CodePen",
+    href: "https://codepen.io/zremboldt/",
+    icon: LogoCodepen
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/zremboldt",
+    icon: LogoGithub
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/zremboldt/",
+    icon: LogoInstagram
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/zac-remboldt/",
+    icon: LogoLinkedin
+  },
 ];

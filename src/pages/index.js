@@ -1,30 +1,19 @@
-import React, { Component } from "react";
+import SplashScreen from "../components/splash-screen";
+import LandingPage from "../components/landing-page";
+import React, { useEffect, useState } from "react";
 import "../styles/index.sass";
-import SEO from "../components/seo";
-import SplashScreen from "../components/SplashScreen";
-import LandingPage from "../components/LandingPage";
+import Seo from "../components/seo";
 
-export default class IndexPage extends Component {
-  state = { showSplashScreen: true };
+export default function Index() {
+  const [splashScreenIsVisible, setSplashScreenIsVisible] = useState(true);
 
-  componentDidMount() {
-    this.hideSplashScreen();
-  }
+  useEffect(() => setTimeout(() => setSplashScreenIsVisible(false), 2800), [])
 
-  hideSplashScreen = () => {
-    setTimeout(() => {
-      this.setState({ showSplashScreen: false });
-    }, 2800);
-  };
-
-  render() {
-    const { showSplashScreen } = this.state;
-    return (
-      <>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-        <SplashScreen showSplashScreen={showSplashScreen} />
-        <LandingPage showSplashScreen={showSplashScreen} />
-      </>
-    );
-  }
+  return (
+    <>
+      <Seo title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SplashScreen splashScreenIsVisible={splashScreenIsVisible} />
+      <LandingPage splashScreenIsVisible={splashScreenIsVisible} />
+    </>
+  );
 }
