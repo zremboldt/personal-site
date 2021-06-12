@@ -1,13 +1,15 @@
 import React, { useEffect, useRef } from "react";
-import { workData, strengthsData, socialData } from "../content";
+import { aboutData, workData, socialData } from "../content";
 import Logo from "../images/logo";
-import About from "./about";
 import ContactCard from "./contact-card";
 import IconResume from "../images/icon-resume";
 import LogoGithub from "../images/logo-github";
 import LogoCodepen from "../images/logo-codepen";
+import Strength from "./strength";
 
 export default function LandingPage({ splashScreenIsVisible }) {
+  const { aboutStatement, aboutStory, aboutStrengths } = aboutData;
+
   const cardRef0 = useRef();
   const cardRef1 = useRef();
   const cardRef2 = useRef();
@@ -28,7 +30,19 @@ export default function LandingPage({ splashScreenIsVisible }) {
           <Logo />
         </header>
 
-        <About data={strengthsData} />
+        <section className="aboutStatement">
+          <h1>{aboutStatement.headline}</h1>
+        </section>
+
+        <section className="aboutStory">
+          <h3>{aboutStory.headline}</h3>
+          {aboutStory.body.map((line, i) => <p key={i}>{line}</p>)}
+        </section>
+
+        <section className="aboutStrengths">
+          <h3>{aboutStrengths.headline}</h3>
+          <ul>{aboutStrengths.strengthsData.map(({ strength, description }, i) => <Strength strength={strength} description={description} key={i} />)}</ul>
+        </section>
 
         <div className="ctr-work">
           <a

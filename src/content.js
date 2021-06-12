@@ -4,25 +4,6 @@ import LogoDribbble from './images/logo-dribbble';
 import LogoCodepen from './images/logo-codepen';
 import LogoLinkedin from './images/logo-linkedin';
 
-export const workData = [
-  {
-    name: 'Resume',
-    text: 'Highlighted projects, accomplishments, work experience, etc.',
-    url: 'https://drive.google.com/file/d/11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF/view?usp=sharing',
-  },
-  {
-    name: 'GitHub',
-    text: 'Most of my more involved projects and ideas can be found here.',
-    url: 'https://github.com/zremboldt',
-  },
-  {
-    name: 'Codepen',
-    text:
-      'This is the coding laboratory where some of my fun experiments live.',
-    url: 'https://codepen.io/zremboldt',
-  }
-];
-
 export const strengthsData = [
   {
     strength: 'Ideation',
@@ -48,6 +29,42 @@ export const strengthsData = [
     strength: 'Intellection',
     description:
       'People who are especially talented in the Intellection theme are characterized by their intellectual activity. They are introspective and appreciate intellectual discussions.'
+  }
+];
+
+export const aboutData = {
+  aboutStatement: {
+    headline: 'Drawing from a strong background in design, I build engaging user focused experiences from initial concept to final deployment.',
+  },
+  aboutStory: {
+    headline: 'My Road to Code',
+    body: [
+      'I spent nearly ten years working in the creative industry as a visual designer but always had the itch to bring my work to life. I wanted to build things that people could use and interact with.',
+      `I dabbled in code here and there but finally decided to go for it in 2016 and become a web/software developer. I never looked back, pouring myself into it daily. I'm always excited for what I’ll build/learn next.`,
+    ],
+  },
+  aboutStrengths: {
+    headline: `Strengths - Gallup's StrengthsFinder`,
+    strengthsData,
+  }
+}
+
+export const workData = [
+  {
+    name: 'Resume',
+    text: 'Highlighted projects, accomplishments, work experience, etc.',
+    url: 'https://drive.google.com/file/d/11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF/view?usp=sharing',
+  },
+  {
+    name: 'GitHub',
+    text: 'Most of my more involved projects and ideas can be found here.',
+    url: 'https://github.com/zremboldt',
+  },
+  {
+    name: 'Codepen',
+    text:
+      'This is the coding laboratory where some of my fun experiments live.',
+    url: 'https://codepen.io/zremboldt',
   }
 ];
 
