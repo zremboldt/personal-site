@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import IconEmail from '../images/icon-email';
 import { useClipboard } from 'use-clipboard-copy';
 
-export default function ContactCard({ socialData }) {
+export default function ContactCard({ socialData, index }) {
   const [isCopied, setIsCopied] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
   const clipboard = useClipboard();
+
+  useEffect(() => setTimeout(() => setIsVisible(true), 300 + 125 * index), [])
 
   const handleCopy = () => {
     clipboard.copy('zremboldt@gmail.com');
@@ -13,7 +16,7 @@ export default function ContactCard({ socialData }) {
   }
 
   return (
-    <>
+    <div className={`card cardContact ${isVisible && 'fadeInLeft'}`}>
       <div className="ctr-Text">
         <h3>Say Hi :)</h3>
         <p>I'm available for remote projects. If you’d like to build something together, get in touch.</p>
@@ -44,6 +47,6 @@ export default function ContactCard({ socialData }) {
           </a>
         ))}
       </div>
-    </>
+    </div>
   );
 }

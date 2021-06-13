@@ -3,6 +3,7 @@ import LogoInstagram from './images/logo-instagram';
 import LogoDribbble from './images/logo-dribbble';
 import LogoCodepen from './images/logo-codepen';
 import LogoLinkedin from './images/logo-linkedin';
+import IconResume from "./images/icon-resume";
 
 export const strengthsData = [
   {
@@ -54,17 +55,20 @@ export const workData = [
     name: 'Resume',
     text: 'Highlighted projects, accomplishments, work experience, etc.',
     url: 'https://drive.google.com/file/d/11nIyDADW-ZFETthSZQ-10ezW2BzkJrgF/view?usp=sharing',
+    icon: IconResume
   },
   {
     name: 'GitHub',
     text: 'Most of my more involved projects and ideas can be found here.',
     url: 'https://github.com/zremboldt',
+    icon: LogoGithub
   },
   {
     name: 'Codepen',
     text:
       'This is the coding laboratory where some of my fun experiments live.',
     url: 'https://codepen.io/zremboldt',
+    icon: LogoCodepen
   }
 ];
 
